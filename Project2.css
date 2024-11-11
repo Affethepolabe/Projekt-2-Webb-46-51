@@ -1,0 +1,167 @@
+/*Header (Apply to all)*/
+
+body {
+    font-family:"Arial", sans-serif;
+    margin: 0;
+    background-color: #000000;
+}
+
+.top a{
+    color: whitesmoke;
+    background-color: #000000;
+    text-decoration: none;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top a:hover{
+    text-decoration: underline;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    z-index: 999;
+    display: grid;
+    grid-template: 60px / 15% 70% 15%;
+    grid-template-areas: 
+    "left mid right";
+}
+
+#left{
+    font-size:x-large;
+    grid-area: left;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+#mid{
+    font-size: small;
+    font-family:monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    grid-area: right;
+    scale: 0.75;
+}
+
+#right a{
+    color: #202020;
+}
+
+#right a img{
+    padding-right: 10px;
+    scale: 4;
+}
+
+#left a img{
+    height: 100%;
+}
+
+
+/* HEADER NAVBAR */
+
+nav{
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+}
+nav ul {
+    list-style-type: none;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #2b83f9;
+    margin: 0;
+    font-size: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 14px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #3b90ff;
+    transition: 0.3s;
+}
+
+
+.spacer{
+    top: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0,164,255,1);
+    scale: 1;
+    overflow-x:hidden;
+}
+.spacer::before{
+  z-index: 3;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100;
+  width: 100%;
+  height: 875px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.texovimg{
+    position: absolute;
+    color: #f0f0f0;
+    font-size: 50px;
+    top: 175px;
+    z-index: 3;
+}
+.omoss{
+    position: absolute;
+    color: #f0f0f0;
+    font-size: x-large;
+    top: 350px;
+    background-color: #2b83f9;
+    padding: 10px;
+    border-radius: 10px;
+    
+    z-index: 3;
+}
+
+.omoss a{
+    color: white;
+    text-decoration: none;
+}
+
+.omoss a:hover{
+    text-decoration: underline;
+}
+
+.spacer img{
+    z-index: 1;
+    scale: 1.55;
+}
+
+
+
+@media (max-width: 608px) {
+    .texovimg{
+        font-size: 35px;
+    }
+}
+    
