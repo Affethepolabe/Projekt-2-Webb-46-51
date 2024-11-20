@@ -1,29 +1,33 @@
 /*Header (Apply to all)*/
+@font-face {
+    font-family: "SF-PRO";
+    src: url("Assets/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
 
 body {
-    font-family:"Arial", sans-serif;
+    font-family:"SF-PRO", sans-serif;
     margin: 0;
-    background-color: #000000;
+    background-color: #ededed;
 }
 
-.top a{
-    color: whitesmoke;
-    background-color: #000000;
-    text-decoration: none;
-    z-index: 999;
+#top{
     display: flex;
     justify-content: center;
+    gap: 2vw;
+
+    color: whitesmoke;
+    background-color: black;
+    height: 30px;
+    text-decoration: none;
+    z-index: 999;
     align-items: center;
-}
-.top a:hover{
-    text-decoration: underline;
 }
 
 header{
     position: sticky;
     top: 0;
-    background-color: #f0f0f0;
-    color: rgb(0, 0, 0);
+    background: linear-gradient(0deg, #111 40%, #222 100%);
     padding: 5px;
     z-index: 999;
     display: grid;
@@ -41,28 +45,25 @@ header{
 }
 
 #mid{
-    font-size: small;
-    font-family:monospace;
+    font-size: medium;
+    font-family: "SF-PRO";
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #f0f0f0;
 }
 
 #right{
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content:center;
     grid-area: right;
-    scale: 0.75;
-}
-
-#right a{
-    color: #202020;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #right a img{
-    padding-right: 10px;
-    scale: 4;
+    scale: 0.15;
 }
 
 #left a img{
@@ -77,91 +78,282 @@ nav{
     top: 70px;
     z-index: 999;
 }
-nav ul {
+nav div {
     list-style-type: none;
-    padding: 5px;
     display: flex;
     justify-content: center;
-    background-color: #2b83f9;
+    align-items: center;
+    background-color: #111;
     margin: 0;
     font-size: 20px;
+    height: 40px;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0;
-}
-nav ul li a {
+nav div li a {
     text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    padding: 14px 20px;
-    display: block;
+    color: #d0d0d0;
 }
 
-nav ul li a:hover {
-    background-color: #3b90ff;
+nav div li a:hover {
+    color: #ffffff;
     transition: 0.3s;
 }
 
 
-.spacer{
-    top: 500px;
+/* HOME */
+
+.Home{
+    display: grid;
+    grid-template: repeat(8, 400px) / 25% 25% 25% 25%;
+    grid-template-areas: 
+    "banner1 banner1 banner1 banner1"
+    "banner1 banner1 banner1 banner1"
+    "banner2 banner2 banner2 banner2"
+    "banner2 banner2 banner2 banner2"
+    "banner3 banner3 banner4 banner5"
+    "banner3 banner3 banner6 banner6"
+    "banner7 banner8 banner9 banner9"
+    "banner7 banner8 banner9 banner9";
+}
+
+/* BANNER1 */
+.banner1{
+    grid-area: banner1;
+
+    display: grid;
+    grid-template: 1fr / 10% 80% 10%;
+    grid-template-areas: 
+    "SpacerL SpacerM SpacerR";
+
+    background: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(255,255,255,1) 70%, rgba(0,0,0,1) 71%, rgba(0,143,217,1) 100%);
+    z-index: 1;
+}
+#header1{
+    grid-area: SpacerM;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #f0f0f0;
+    font-size: 60px;
+}
+#omoss1{
+    grid-area: SpacerM;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    background-color: rgba(0,164,255,1);
-    scale: 1;
-    overflow-x:hidden;
+
+    margin-top: 180px;
+    gap: 20px;
 }
-.spacer::before{
-  z-index: 3;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 100;
-  width: 100%;
-  height: 875px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.texovimg{
-    position: absolute;
-    color: #f0f0f0;
-    font-size: 50px;
-    top: 175px;
-    z-index: 3;
-}
-.omoss{
-    position: absolute;
-    color: #f0f0f0;
-    font-size: x-large;
-    top: 350px;
+
+#leftdiv1 a{
     background-color: #2b83f9;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 17px;
+    border-radius: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+#leftdiv1 a:hover{
+    color: #fff;
+}
+
+#rightdiv1 a{
+    outline: 2px solid #2b83f9;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #2b83f9;
     
+}
+#rightdiv1 a:hover{
+    color: #f0f0f0;
+    background-color: #2b83f9; 
+}
+
+/* BANNER2 */
+.banner2{
+    grid-area: banner2;
+
+    background: rgb(214,214,214);
+    background: linear-gradient(0deg, rgb(7, 9, 48) 0%, rgb(36, 111, 149) 46%, rgb(0, 0, 0) 100%);
+    margin-top: 20px;
+    z-index: 0;
+
+    display: grid;
+    grid-template: 1fr / 10vw 80vw 10vw;
+    grid-template-areas: 
+    "Spacer2L Spacer2M Spacer2R";
+}
+#header2{
+    grid-area: Spacer2M;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #f0f0f0;
+    font-size: 60px;
+    margin-top: -400px;
+    font-weight: bold;
+
+
+}
+#omoss2{
+    grid-area: Spacer2M;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    margin-bottom: 300px;
+    gap: 20px;
+}
+
+#leftdiv2 a{
+    background-color: #ffffff;
+    padding: 17px;
+    border-radius: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+}
+#leftdiv2 a:hover{
+    color: #202020;
+}
+
+#rightdiv2 a{
+    outline: 2px solid #ffffff;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+#rightdiv2 a:hover{
+    color: #000000;
+    background-color: rgb(255, 255, 255); 
+}
+
+#banner2img{
+    grid-area: Spacer2M;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 180px;
+    scale: 0.9;
+}
+
+
+/* BANNER3 */
+.banner3{
+    grid-area: banner3;
+
+    background-color: #ffffff;
+    z-index: 0;
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+}
+#header3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #000000;
+    font-size: 60px;
+    font-weight: bold;
+
+
+}
+#handlajulklappar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 3;
 }
 
-.omoss a{
-    color: white;
+#handlajulklappar a{
+    background-color: #2b83f9;
+    padding: 17px;
+    border-radius: 50px;
+    font-size: 20px;
     text-decoration: none;
+    color: #e1e1e1;
 }
-
-.omoss a:hover{
-    text-decoration: underline;
-}
-
-.spacer img{
-    z-index: 1;
-    scale: 1.55;
+#handlajulklappar a:hover{
+    color: #ffffff;
 }
 
 
+#banne3img{
+    grid-area: Spacer3M;
 
-@media (max-width: 608px) {
-    .texovimg{
-        font-size: 35px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0.9;
+}
+
+/* BANNER4 */
+.banner4{
+    grid-area: banner4;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BANNER5 */
+.banner5{
+    grid-area: banner5;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BANNER6 */
+.banner6{
+    grid-area: banner6;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
     
+/* BANNER7 */
+.banner7{
+    grid-area: banner7;
+    background-color: rgb(60, 0, 0);
+}
+
+/* BANNER8 */
+.banner8{
+    grid-area: banner8;
+    background-color: rgb(61, 0, 83);
+}
+
+/* BANNER9 */
+.banner9{
+    grid-area: banner9;
+    background-color: rgb(0, 189, 57);
+}
